@@ -1,0 +1,27 @@
+<%- include ("../partials/header") %>
+
+<h1 id="n-head" class="heading"><i class="far fa-newspaper"></i>NEWS</h1>
+
+<div class="container" id="news_body">
+    <center>
+        <div class="col-md-8">
+            <% ar.forEach(function(arr){ %>
+                <div class="card news_cont bg-dark mb-3" id="news_card">
+                    <div class="card-header" id="news_text">
+                        By <%= arr.by %> <i class="far fa-file-alt" style="color: white;"></i>
+                        <hr style="background-color: white; opacity: .5;">
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text" id="news_text"><%= arr.text %></p>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+    </center>
+</div>
+
+<a href="/gallery">Go Back</a>
+
+<%- include ("../partials/footer") %>
+
+<!-- <%= %> -->

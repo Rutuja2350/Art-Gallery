@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <title>RA</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Piedra&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Special+Elite&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Monoton&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Freckle+Face&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Changa&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/stylesheet/main.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+        <!-- Google Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+        <!-- Bootstrap core CSS -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Material Design Bootstrap -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/css/mdb.min.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-md fixed-top nav_hov" id="navbar">
+            <a class="navbar-brand" href="/" id="nav_links">RA<i class="fas fa-palette"></i></a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"><i class="fas fa-hamburger"></i></i></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navLinks">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/gallery" id="nav_links">Home <span class="sr-only">(current)</span></a>                        
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/gallery/blog" id="nav_links">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/gallery/history" id="nav_links">History</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="nav_links" href="/gallery/artist" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Artist
+                        </a>
+                        <div class="dropdown-menu" id="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="/gallery/artists/amrita" id="nav_links">Amrita Sher-Gil</a>
+                            <a class="dropdown-item" href="/gallery/artists/pablo" id="nav_links">Pablo Picasso</a>
+                            <a class="dropdown-item" href="/gallery/artists/norman" id="nav_links">Norman Rockwell</a>                                
+                            <a class="dropdown-item" href="/gallery/artists/husain" id="nav_links">M. F. Husain</a>
+                        </div>
+                    </li>
+                </ul>
+                <div class="navbar-collapse flex-grow-1 text-right" id="myNavbar">
+                <ul class="nav navbar-nav ml-auto flex-nowrap navi text-right" id="navLinks">
+                    <% if(!currentUser){ %>
+                        <li class="nav-item"><a class="nav-link" href="/gallery/login" id="nav_links">Login</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/gallery/register" id="nav_links">Sign Up</a></li>
+                    <% } else{ %>
+                        <li class="nav-item"><a href="#" id="nav_links" class="nav-link">Signed In As <%= currentUser.username %></a></li>
+                        <li class="nav-item"><a class="nav-link" href="/gallery/logout" id="nav_links">Logout</a></li>
+                    <% } %>
+                </ul>
+                </div>
+            </div>
+        </nav>

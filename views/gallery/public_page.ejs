@@ -1,0 +1,23 @@
+<%- include ("../partials/header") %>
+
+<h1 id="phead" class="heading">Art Gallery</h1>
+<center><a href="/gallery/public_page/new" class="btn" id="upload"><i class="fas fa-upload"></i>Upload New Post</a></center>
+
+<div class="container">
+    <% gallery.forEach(function(gallery){ %>
+        <center>
+            <div class="card img-thumbnail public">
+                <img src="<%= gallery.image %>" id="post" alt="...">
+            </div>
+        </center>
+    <% }); %>
+</div>
+
+<a href="/gallery">Go Back</a>
+
+<%- include ("../partials/footer") %>
+
+<!-- <%= gallery.image %> -->
+<!-- <div class="card-body">
+    <p class="card-text"><i>Submittedt by: <%= gallery.name %></i></p>
+</div> -->

@@ -1,0 +1,43 @@
+<%- include ("../../partials/header") %>
+
+<div class="container">
+    <div id="blog_cont">
+        <div class="container">
+            <h1 id="blog_head">BLOGS <i class="far fa-bookmark"></i></h1>
+            <center>
+                <p id="bpara">Share your thoughts here !</p>
+                <p>
+                    <a href="/gallery/blog/new_blog" class="btn" id="block_btn">
+                        <i class="fas fa-pencil-alt"></i>
+                        Add New Blog
+                    </a>
+                </p>
+            </center>
+
+        </div>
+    </div>
+
+    <% blogs.forEach(function(blog){ %>
+        <center>
+            <div class="card img-thumbnail blog">
+                <img src="<%= blog.image %>"  id="blog_body" class="card-img" alt="...">
+                <!-- ######### d-flex align-items-center flex-column########## -->
+                <div class="card-img-overlay">
+                        <h5 class="card-title" id="blog_title"><%= blog.title %></h5>
+                        <p class="card-text d-none d-md-inline" id="blog_body"><%= blog.description %>.</p>
+                        <p class="card-text">In Featured Story, My Diary by <%= blog.name %></p>
+
+                        <% if(currentUser && blog.author.id.equals(currentUser._id)) { %>
+                            <form id="delete-form" action="/gallery/blog/<%= blog._id %>?_method=DELETE" method="POST">
+                                <button class="btn btn-xs btn-danger"><i class="fas fa-trash-alt"></i>Delete</button>
+                            </form>
+                        <% } %>
+
+                </div>
+            </div>
+        </center>
+    <% }); %>
+</div>
+
+    <%- include ("../../partials/footer") %>
+</div>

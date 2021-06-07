@@ -1,0 +1,22 @@
+<%- include ("partials/header") %>
+
+<h1 class="form_top_head">Upload New Post Here</h1>
+<div class="container">
+    <div class="row">
+        <div style="width: 30%; margin: 25px auto;">
+            <form action="/gallery/public_page" method="POST" enctype="multipart/form-data">
+                <!-- <div class="form-group">
+                    <input class="form-control" type="text" name="gallery[name]" placeholder="Submitted by">
+                </div> -->
+                <div class="form-group">
+                    <input type="file" id="image" class="image" name="image" accept="image/*" required>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block">Submit!</button>
+                </div>
+            </form>
+            <a href="/gallery/public_page">Go Back</a>
+        </div>
+    </div>
+<%- include ("partials/footer") %>
+</div>
